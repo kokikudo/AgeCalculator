@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">AgeCalculator</string>
-    <string name="primary_cal_text">CALCULATE YOUR</string>
-    <string name="age_button">AGE</string>
-    <string name="secondary_cal_text">IN MINUTES</string>
-    <string name="select_date_button">SELECT DATE</string>
-    <string name="sub_text_date">Selected Date</string>
-    <string name="sub_text_minutes">In minutes till date</string>
+    <string name="primary_cal_text">あなたが生きれる残り時間</string>
+    <string name="secondary_cal_text">平均寿命を84歳として測定</string>
+    <string name="select_date_button">誕生日を選択</string>
+    <string name="sub_text_date">あなたが生まれた日</string>
+    <string name="sub_text_minutes">寿命まであと</string>
+    <string name="result_date">%1$s 時間</string>
 </resources>

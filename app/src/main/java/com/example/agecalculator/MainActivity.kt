@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
 
     private var pickDateText: TextView? = null
     private var resultText: TextView? = null
+    private val averageLifeSpan: Int = 84
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,11 +28,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showDatePicker() {
-        val calendar = Calendar.getInstance() // Javaのカレンダクラスのインスタンス取得
-        val year = calendar.get(Calendar.YEAR)
-        val month = calendar.get(Calendar.MONTH)
-        val day = calendar.get(Calendar.DAY_OF_MONTH)
-
         // ダイアログ
         val dialog = DatePickerDialog(this, { _, _year, _month, dayOfMonth ->
 
@@ -42,24 +38,29 @@ class MainActivity : AppCompatActivity() {
             val dateFormat = SimpleDateFormat("yyyy/MM/dd", Locale.JAPANESE)
             val tDate = dateFormat.parse(selectedData)
 
-            // ダイアログで指定したデータを分単位に変換
+            // ダイアログで指定したデータをhour単位に変換
             // 先にnullの確認
             tDate?.let {
-
-                // Date.timeプロパティは1970/1/1から経過した時間をミリ秒で格納している
-                // 分に直すには、ミリ秒→秒に変換(/1000)、60秒→1分(/60)なので、60000で割る
-                val selectedDataInMinutes = tDate.time / 60000
-
                 // 現在の時間
                 val currentDate = dateFormat.parse(dateFormat.format(System.currentTimeMillis()))
                 currentDate?.let {
-                    val currentDateInMinutes = currentDate.time / 60000
+                    val currentDateInMinutes = currentDate.time / 3600000
 
-                    // 差分を計算
-                    val deltaDateInMinutes = currentDateInMinutes - selectedDataInMinutes
+                    // 平均寿命を迎えるまでの時間
+                    // 設定した日からちょうど84年後を寿命として計算
+                    val aveLifeSpanDate =
+                        dateFormat.parse("${_year + averageLifeSpan}/${_month + 1}/$dayOfMonth")
+                    aveLifeSpanDate?.let {
 
-                    // 値を更新
-                    resultText?.text = deltaDateInMinutes.toString()
+                        // 寿命までの時間を変換
+                        val aveLifeSpanDateInMinutes = aveLifeSpanDate.time / 3600000
+
+                        // 差分を計算
+                        val lifeSpanDateInMinutes = aveLifeSpanDateInMinutes - currentDateInMinutes
+                        // 値を更新
+                        resultText?.text =
+                            getString(R.string.result_date, lifeSpanDateInMinutes.toString())
+                    }
                 }
             }
         }, 1990, 0, 1)
