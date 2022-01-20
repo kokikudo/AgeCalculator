@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:gravity="center_horizontal"
+    android:padding="16dp"
+    >
+
+    <TextView
+        android:id="@+id/primary_cal_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primary_text"
+        android:textSize="30sp"
+        android:text="@string/primary_cal_text"/>
+
+    <TextView
+        android:id="@+id/age_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/age_button"
+        android:padding="10dp"
+        android:background="@color/primary"
+        android:layout_marginTop="10dp"
+
+        android:textColor="@color/text"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/secondary_cal_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/secondary_cal_text"
+        android:textColor="@color/primary_text"
+        android:layout_marginTop="10dp"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/select_date_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/button"
+        android:textColor="@color/primary_text"
+        android:text="@string/select_date_button"
+        android:layout_marginTop="20dp"
+
+        tools:layout_editor_absoluteX="139dp"
+        tools:layout_editor_absoluteY="176dp" />
+
+    <TextView
+        android:id="@+id/pick_date_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/primary_text"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="315dp" />
+
+    <TextView
+        android:id="@+id/sub_date_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sub_text_date"
+        android:textColor="@color/secondary_text"
+        tools:layout_editor_absoluteX="134dp"
+        tools:layout_editor_absoluteY="356dp" />
+
+    <TextView
+        android:id="@+id/result_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textStyle="bold"
+        android:textColor="@color/primary_text"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="400dp" />
+
+    <TextView
+        android:id="@+id/sub_text_minutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sub_text_minutes"
+        android:textColor="@color/secondary_text"
+        tools:layout_editor_absoluteX="181dp"
+        tools:layout_editor_absoluteY="472dp" />
+
+</LinearLayout>
